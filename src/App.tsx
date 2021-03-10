@@ -10,24 +10,20 @@ function appUrlParser(url:string): string{
     )
 }
 
+
+
 function App() {
 
-    // eslint-disable-next-line no-restricted-globals
-    const initState: string = appUrlParser(location.pathname)
-
-    const [value, setState] = useState<string>(initState)
+    const [value, setState] = useState<string>('login')
 
     const onLogin = ()=>{
+        // eslint-disable-next-line no-restricted-globals
         const url: string = 'login'
         setState(url)
     }
     const onRegister = ()=>{
+        // eslint-disable-next-line no-restricted-globals
         const url: string = 'register'
-        setState(url)
-    }
-
-    const onDashboard = ()=>{
-        const url: string = 'dashboard'
         setState(url)
     }
 
@@ -39,7 +35,7 @@ function App() {
 
   return (
     <div ref={root_ref}>
-      <AppHeader onLogin={onLogin} onRegister={onRegister} onDashboard={onDashboard}/>
+      <AppHeader onLogin={onLogin} onRegister={onRegister}/>
       <Main component={component} main_ref={main_ref}/>
     </div>
   );
